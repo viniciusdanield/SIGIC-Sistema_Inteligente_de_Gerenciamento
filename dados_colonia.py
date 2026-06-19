@@ -1,9 +1,8 @@
 # DICIONÁRIO CONTENDO INFORMAÇÕES SOBRE OS MÓDULOS:
 
-
 modulos = {
 "Habitação": {
-    "consumo": ,
+    "consumo": (20,),
     "prioridade": ,
     "armazenamento": ,
     "comunicacao": ,
@@ -66,6 +65,7 @@ modulos = {
     "status": , 
 },
 }
+
 # GRAFO DA COLÔNIA 
 # Cada conexão representa um peso, o preso representa : distância / custo energético / tempo
 
