@@ -105,3 +105,5 @@ grafo = {
     "Produção de Oxigênio": 
     [ ("Armazenamento de Energia", ), 
     ("Suporte Médico", ) ] }
+
+print("TESTANDO")
