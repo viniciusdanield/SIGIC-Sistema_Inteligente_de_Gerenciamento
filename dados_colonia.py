@@ -117,7 +117,41 @@ grafo = {
         ] 
     }
 
-print("TESTANDO")
+# Matriz de adjacência do grafo
+
+nome_modulos = [
+    "Habitação",
+    "Centro de Controle",
+    "Armazenamento de Energia",
+    "Agricultura",
+    "Laboratório Científico",
+    "Comunicação",
+    "Suporte Médico",
+    "Produção de Oxigênio"
+]
+
+# Matriz de adjacência representando as conexões entre os módulos
+
+matriz_adjacencia = [
+    [0, 5, 0, 0, 0, 0, 3, 0],  # Habitação
+    [5, 0, 6, 0, 7, 4, 0, 0],  # Centro de Controle
+    [0, 6, 0, 5, 0, 0, 0, 4],  # Armazenamento de Energia
+    [0, 0, 5, 0, 4, 0, 0, 0],  # Agricultura
+    [0, 7, 0, 4, 0, 3, 0, 0],  # Laboratório Científico
+    [0, 4, 0, 0, 3, 0, 0, 0],  # Comunicação
+    [3, 0, 0, 0, 0, 0, 0, 2],   # Suporte Médico
+    [0, 0, 4, 0, 0, 0, 2, 0]    # Produção de Oxigênio
+    ]
+
+
+# Representação da matriz 
+
+def mostrar_matriz():
+    print("\nMatriz de Adjacência\n")
+    for linha in matriz_adjacencia:
+        print(linha)
+
+mostrar_matriz() 
 
 # Algoritmo de Dijkstra
 
@@ -173,3 +207,5 @@ def prioridade_modulos(modulos):
 # Função para calcular o consumo total de energia dos módulos
 def consumo_total(modulos):
     return sum(m["consumo"] for m in modulos.values())
+
+print(matriz_adjacencia[4][1])
