@@ -72,41 +72,50 @@ modulos = {
 # Cada conexão representa um peso, o preso representa : distância / custo energético / tempo
 
 grafo = {
-    "Habitação": 
-    [ ("Centro de Controle", ), 
-    ("Suporte Médico", ) ], 
+    "Habitação": [ 
+    ("Centro de Controle", 5),
+    ("Suporte Médico", 3) 
+     ],
 
-    "Centro de Controle": 
-    [ ("Habitação", ), 
-     ("Comunicação", ), 
-     ("Armazenamento de Energia", ), 
-     ("Laboratório Científico", ) ], 
+    "Centro de Controle": [
+     ("Habitação", 5), 
+     ("Comunicação", 4), 
+     ("Armazenamento de Energia", 6), 
+     ("Laboratório Científico", 7) 
+        ], 
 
-    "Armazenamento de Energia": 
-    [ ("Centro de Controle", ), 
-     ("Produção de Oxigênio", ), 
-     ("Agricultura", ) ], 
+    "Armazenamento de Energia": [ 
+    ("Centro de Controle", 6), 
+     ("Produção de Oxigênio", 4), 
+     ("Agricultura", 5) 
+        ], 
 
-    "Agricultura": 
-    [ ("Armazenamento de Energia", ), 
-     ("Laboratório Científico", ) ], 
+    "Agricultura": [ 
+    ("Armazenamento de Energia", 5), 
+     ("Laboratório Científico", 4) 
+        ], 
 
-    "Laboratório Científico": 
-    [ ("Agricultura", ), 
-     ("Comunicação", ), 
-     ("Centro de Controle", ) ], 
+    "Laboratório Científico": [
+    ("Agricultura", 4), 
+     ("Comunicação", 3), 
+     ("Centro de Controle", 7) 
+        ], 
 
-    "Comunicação": 
-    [ ("Centro de Controle", ), 
-    ("Laboratório Científico", ) ], 
+    "Comunicação": [ 
+    ("Centro de Controle", 4), 
+    ("Laboratório Científico", 3) 
+        ], 
 
-    "Suporte Médico": 
-    [ ("Habitação", ), 
-     ("Produção de Oxigênio", ) ],
+    "Suporte Médico": [ 
+    ("Habitação", 3), 
+     ("Produção de Oxigênio", 2) 
+        ],
 
-    "Produção de Oxigênio": 
-    [ ("Armazenamento de Energia", ), 
-    ("Suporte Médico", ) ] }
+    "Produção de Oxigênio": [ 
+    ("Armazenamento de Energia", 4), 
+    ("Suporte Médico", 2) 
+        ] 
+    }
 
 print("TESTANDO")
 
