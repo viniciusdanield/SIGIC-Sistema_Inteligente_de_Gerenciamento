@@ -156,8 +156,15 @@ mostrar_matriz()
 # Algoritmo de Dijkstra
 
 def dijkstra(grafo, inicio):
-    distancias = {no: float('inf') for no in grafo}
+
+    distancias = {
+        no: float('inf') 
+        for no in grafo
+    }
+    anteriores = {}
+
     distancias[inicio] = 0
+
     fila = [(0, inicio)]
 
     while fila:
@@ -168,9 +175,10 @@ def dijkstra(grafo, inicio):
 
             if nova_dist < distancias[vizinho]:
                 distancias[vizinho] = nova_dist
+                anteriores[vizinho] = atual
                 heapq.heappush(fila, (nova_dist, vizinho))
 
-    return distancias
+    return distancias, anteriores
 
 # BFS
 
