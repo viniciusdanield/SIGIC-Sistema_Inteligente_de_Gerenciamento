@@ -3,7 +3,8 @@ from algoritmos import (
     bfs,
     dfs,
     reconstruir_caminho,
-    consumo_total
+    consumo_total,
+    simular_falha
 )
 from dados_colonia import (
     modulos,
@@ -54,6 +55,7 @@ while True:
     print("3. Executar DFS")
     print("4. Calcular melhor rota")
     print("5. Consumo total")
+    print("6. Simular falha")
     print("0. Sair")
 
     opcao = input("Escolha uma opção: ")
@@ -75,6 +77,14 @@ while True:
     elif opcao == "5":
         total = consumo_total(modulos)
         print("\nConsumo total de energia:", total)
+    elif opcao == "6":
+        modulo = input(
+            "Digite o módulo que apresentou falha: "
+        )
+        simular_falha(
+            modulos,
+            modulo
+        )
     elif opcao == "0":
         print("Saindo do programa.")
         break

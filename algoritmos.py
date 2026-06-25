@@ -77,3 +77,11 @@ def prioridade_modulos(modulos):
 # Função para calcular o consumo total de energia dos módulos
 def consumo_total(modulos):
     return sum(m["consumo"] for m in modulos.values())
+
+def simular_falha(modulos, nome_modulo):
+    if nome_modulo not in modulos:
+        print("Módulo não econtrado.")
+        return
+    modulos[nome_modulo]["status"] = "Em manutenção"
+    print("\nAlerta!:")
+    print(f"{nome_modulo} Entrou em manutenção.")
