@@ -143,11 +143,9 @@ matriz_adjacencia = [
 
 
 # Representação da matriz 
-
-""" def mostrar_matriz():
+def mostrar_matriz():
     print("\nMatriz de Adjacência\n")
     for linha in matriz_adjacencia:
         print(linha)
-
-mostrar_matriz() """
+ 
 

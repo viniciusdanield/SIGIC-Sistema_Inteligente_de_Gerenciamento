@@ -3,6 +3,7 @@ from algoritmos import (
     bfs,
     dfs,
     prever_consumo,
+    prioridade_modulos,
     reconstruir_caminho,
     consumo_total,
     simular_falha,
@@ -10,7 +11,9 @@ from algoritmos import (
 )
 from dados_colonia import (
     modulos,
-    grafo
+    grafo,
+
+    mostrar_matriz
 )
 
 
@@ -60,6 +63,8 @@ while True:
     print("6. Simular falha")
     print("7. Consultar módulo")
     print("8. Prever consumo")
+    print("9. Mostrar matriz de adjacência")
+    print("10. Módulos por prioridade")
     print("0. Sair")
 
     opcao = input("Escolha uma opção: ")
@@ -105,6 +110,12 @@ while True:
         print(
             f"\nPrevisão de consumo de energia: {consumo} kW"
         )
+    elif opcao == "9":
+        mostrar_matriz()
+    elif opcao == "10":
+        print("\nMódulos por prioridade:\n")
+        for nome, dados in prioridade_modulos(modulos):
+            print(f"{nome}: prioridade {dados['prioridade']}")
     elif opcao == "0":
         print("Saindo do programa.")
         break
