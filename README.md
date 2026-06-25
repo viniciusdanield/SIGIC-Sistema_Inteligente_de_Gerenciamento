@@ -81,9 +81,6 @@ O sistema permite analisar consumo energético, priorizar módulos críticos e s
 ```bash
 python menu.py
 
-## 
----
-
 Integrantes
 Nome: ANA CAROLINA FREIRE MAFRA – rm573650
 Nome: Daniel Guimarães Barreto – rm573425
