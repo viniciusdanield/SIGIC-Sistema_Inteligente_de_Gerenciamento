@@ -1,10 +1,8 @@
-import heapq
-from collections import deque
 # DICIONÁRIO CONTENDO INFORMAÇÕES SOBRE OS MÓDULOS:
 
 modulos = {
 "Habitação": {
-    "consumo": (20,),
+    "consumo": 20,
     "prioridade": 5,
     "armazenamento": 100,
     "comunicacao":"Alta",
@@ -12,15 +10,15 @@ modulos = {
     },
 
 "Centro de Controle": {
-    "consumo": (30,),
+    "consumo": 30,
     "prioridade": 5,
     "armazenamento": 50,
     "comunicacao": "Muito Alta",
     "status": "Ativo", 
     },
 
-"Armazenamento de energia": {
-    "consumo": (10,),
+"Armazenamento de Energia": {
+    "consumo": 10,
     "prioridade": 5,
     "armazenamento": 500,
     "comunicacao": "Média",
@@ -28,15 +26,15 @@ modulos = {
     },
 
 "Agricultura": {
-    "consumo": (15,),
+    "consumo": 15,
     "prioridade": 3,
     "armazenamento": 200,
     "comunicacao": "Baixa",
     "status": "Ativo", 
     },
 
-"Laboratório científico": {
-    "consumo": (18,),
+"Laboratório Científico": {
+    "consumo": 18,
     "prioridade": 3,
     "armazenamento": 80,
     "comunicacao": "Alta",
@@ -44,7 +42,7 @@ modulos = {
     },
 
 "Comunicação": {
-    "consumo": (12,),
+    "consumo": 12,
     "prioridade": 4,
     "armazenamento": 60,
     "comunicacao": "Muito Alta",
@@ -52,15 +50,15 @@ modulos = {
     },
 
 "Suporte Médico": {
-    "consumo": (25,),
+    "consumo": 25,
     "prioridade": 5,
     "armazenamento": 120,
     "comunicacao": "Alta",
     "status": "Ativo", 
     },
 
-"Produção de oxigênio": {
-    "consumo": (35,),
+"Produção de Oxigênio": {
+    "consumo": 35,
     "prioridade": 5,
     "armazenamento": 300,
     "comunicacao": "Alta",
@@ -153,67 +151,3 @@ def mostrar_matriz():
 
 mostrar_matriz() 
 
-# Algoritmo de Dijkstra
-
-def dijkstra(grafo, inicio):
-
-    distancias = {
-        no: float('inf') 
-        for no in grafo
-    }
-    anteriores = {}
-
-    distancias[inicio] = 0
-
-    fila = [(0, inicio)]
-
-    while fila:
-        dist_atual, atual = heapq.heappop(fila)
-
-        for vizinho, peso in grafo[atual]:
-            nova_dist = dist_atual + peso
-
-            if nova_dist < distancias[vizinho]:
-                distancias[vizinho] = nova_dist
-                anteriores[vizinho] = atual
-                heapq.heappush(fila, (nova_dist, vizinho))
-
-    return distancias, anteriores
-
-# BFS
-
-def bfs(grafo, inicio):
-    visitados = set()
-    fila = deque([inicio])
-
-    while fila:
-        atual = fila.popleft()
-        if atual not in visitados:
-            print(atual)
-            visitados.add(atual)
-
-            for vizinho, _ in grafo[atual]:
-                fila.append(vizinho)
-
-# DFS
-
-def dfs(grafo, atual, visitados=None):
-    if visitados is None:
-        visitados = set()
-
-    print(atual)
-    visitados.add(atual)
-
-    for vizinho, _ in grafo[atual]:
-        if vizinho not in visitados:
-            dfs(grafo, vizinho, visitados)
-
-# Função para ordenar os módulos por prioridade
-def prioridade_modulos(modulos):
-    return sorted(modulos.items(), key=lambda x: x[1]["prioridade"], reverse=True)
-
-# Função para calcular o consumo total de energia dos módulos
-def consumo_total(modulos):
-    return sum(m["consumo"] for m in modulos.values())
-
-print(matriz_adjacencia[4][1])
