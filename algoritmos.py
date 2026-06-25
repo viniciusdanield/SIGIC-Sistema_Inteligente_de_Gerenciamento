@@ -80,8 +80,25 @@ def consumo_total(modulos):
 
 def simular_falha(modulos, nome_modulo):
     if nome_modulo not in modulos:
-        print("Módulo não econtrado.")
+        print("Módulo não encontrado.")
         return
     modulos[nome_modulo]["status"] = "Em manutenção"
     print("\nAlerta!:")
     print(f"{nome_modulo} Entrou em manutenção.")
+
+def consultar_modulo(modulos, nome_modulo):
+    if nome_modulo not in modulos:
+        print("Módulo não encontrado.")
+        return
+    dados = modulos[nome_modulo]
+    print("\nInformações do módulo")
+    print(f"Nome: {nome_modulo}")
+    print(f"Consumo: {dados['consumo']} kW")
+    print(f"Prioridade: {dados['prioridade']}")
+    print(f"Armazenamento: {dados['armazenamento']} kWh")
+    print(f"Comunicação: {dados['comunicacao']}")
+    print(f"Status: {dados['status']}")
+
+def prever_consumo(modulos_ativos):
+    consumo = 15 * modulos_ativos + 25
+    return consumo

@@ -2,9 +2,11 @@ from algoritmos import (
     dijkstra,
     bfs,
     dfs,
+    prever_consumo,
     reconstruir_caminho,
     consumo_total,
-    simular_falha
+    simular_falha,
+    consultar_modulo
 )
 from dados_colonia import (
     modulos,
@@ -56,6 +58,8 @@ while True:
     print("4. Calcular melhor rota")
     print("5. Consumo total")
     print("6. Simular falha")
+    print("7. Consultar módulo")
+    print("8. Prever consumo")
     print("0. Sair")
 
     opcao = input("Escolha uma opção: ")
@@ -84,6 +88,22 @@ while True:
         simular_falha(
             modulos,
             modulo
+        )
+    elif opcao == "7":
+        modulo = input("Digite o nome do módulo: ")
+        consultar_modulo(
+            modulos,
+            modulo
+        )
+    elif opcao == "8":
+        quantidade = int(
+            input("Quantidade de módulos: ") 
+        )
+        consumo = prever_consumo(
+            quantidade
+        )
+        print(
+            f"\nPrevisão de consumo de energia: {consumo} kW"
         )
     elif opcao == "0":
         print("Saindo do programa.")
