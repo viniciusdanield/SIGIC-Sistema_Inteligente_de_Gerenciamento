@@ -1,6 +1,6 @@
 import heapq
 from collections import deque
-from dados_colonia import (modulos, grafo, matriz_adjacencia)
+from arquivos_auxiliares import (modulos, grafo, matriz_adjacencia)
 
 
 # Algoritmo de Dijkstra

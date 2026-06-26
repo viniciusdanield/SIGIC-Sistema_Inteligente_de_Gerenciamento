@@ -9,7 +9,7 @@ from algoritmos import (
     simular_falha,
     consultar_modulo
 )
-from dados_colonia import (
+from arquivos_auxiliares import (
     modulos,
     grafo,
 
